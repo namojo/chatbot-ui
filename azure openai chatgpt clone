@@ -10,15 +10,15 @@ docker run -e OPENAI_API_HOST=<PASTE_HERE> `
 
 # Azure Deployment
 
-$grp = "rg-oai-service"
-$loc = "uksouth"
+$grp = "Technical_Hub"
+$loc = "Canada East"
 $cne = "cne-gpt-ui"
 
 az group create --resource-group $grp --location $loc
 
 az containerapp env create -n $cne -g $grp --location $loc
 
-az containerapp create -n capp-gpt-ui `
+az containerapp create -n capt-gpt-ui `
                        -g $grp `
                        --image kamalrathnayake/chatgpt-ui `
                        --environment $cne `
